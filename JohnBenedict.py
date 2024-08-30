@@ -1,11 +1,13 @@
-word ='        ______  __  ___   __   ____  _______   ____________  ________________'
-word1='       / / __ \/ / / / | / /  / __ )/ ____/ | / / ____/ __ \/  _/ ____/_  __/'
-word2='  __  / / / / / /_/ /  |/ /  / __  / __/ /  |/ / __/ / / / // // /     / /   '
-word3=' / /_/ / /_/ / __  / /|  /  / /_/ / /___/ /|  / /___/ /_/ // // /___  / /    '
-word4=' \____/\____/_/ /_/_/ |_/  /_____/_____/_/ |_/_____/_____/___/\____/ /_/     '
+import pyfiglet as pyfiglet
 
-print (word)
-print (word1)
-print (word2)
-print (word3)
-print (word4)
+def to_color(string, color):
+    color_code = {'blue': '\033[34m',
+                    'yellow': '\033[33m',
+                    'green': '\033[32m',
+                    'red': '\033[31m'
+                    }
+    return color_code[color] + str(string) + '\033[0m'
+
+result = pyfiglet.figlet_format("JOHN BENEDICT ANDAYA", font = "chiseled" )
+
+print(to_color(result,'blue'))
